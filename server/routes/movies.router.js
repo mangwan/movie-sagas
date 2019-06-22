@@ -3,8 +3,9 @@ const pool = require('../modules/pool');
 
 const router = express.Router();
 
+//get route to get movies from database
 router.get('/movies', (req, res) => {
-  const queryText = 'SELECT id, title, poster, description FROM movies';
+  const queryText = 'SELECT * FROM movies';
   pool.query(queryText)
     .then((result) => { res.send(result.rows); })
     .catch((err) => {
@@ -13,8 +14,9 @@ router.get('/movies', (req, res) => {
     });
 });
 
+//get route to get genres from database
 router.get('/genres', (req, res) => {
-    const queryText = 'SELECT id, name FROM genres';
+    const queryText = 'SELECT * FROM genres';
     pool.query(queryText)
       .then((result) => { res.send(result.rows); })
       .catch((err) => {

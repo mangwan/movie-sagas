@@ -3,11 +3,26 @@ import { connect } from 'react-redux';
 
 
 class Home extends Component {
+  componentDidMount() {
+    this.getMovies();
+  }
+
+  getMovies() {
+    this.props.dispatch({ type: 'FETCH_MOVIES' })
+  }
+
   render() {
     return (
-<h1>Home</h1>
-    )
+      <div>
+      <h1>Home</h1>
+      <pre>{JSON.stringify(this.props.reduxState)}</pre>
+      </div>
+      )
   }
 }
 
-export default connect()(Home);
+const mapReduxStateToProps = (reduxState) => ({
+  reduxState
+});
+
+export default connect(mapReduxStateToProps)(Home);
