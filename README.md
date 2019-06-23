@@ -6,34 +6,34 @@ For this weekend challenge you'll be building a movie application!
 
 ## Database Setup
 
-1. Create a database named `saga_movies_weekend`
-2. Run the queries from `database.sql` on the `saga_movies_weekend` database.
-3. You will need to create the junction table between the `movies` and `genres` tables!
+[x] 1. Create a database named `saga_movies_weekend`
+[x] 2. Run the queries from `database.sql` on the `saga_movies_weekend` database.
+[x] 3. You will need to create the junction table between the `movies` and `genres` tables!
 
 ## Install Dependencies
 
-1. `npm install`
-2. `npm run server`
-3. `npm run client`
+[x] 1. `npm install`
+[x] 2. `npm run server`
+[x] 3. `npm run client`
 
 ## Notes
 
 ### Tags
-We've given you some starter genres in the database. Feel free to change or add some with Postico.
+[x] We've given you some starter genres in the database. Feel free to change or add some with Postico.
  
 ### Movies
-We've added some movie posters in the `public/images` folder, and the database is set up to use them.
+[x] We've added some movie posters in the `public/images` folder, and the database is set up to use them.
 
 ### Relationships
-Genres can be applied to many different movies. Movies can have multiple genres. This is Many-to-Many! Junction Table time!
+[x] Genres can be applied to many different movies. Movies can have multiple genres. This is Many-to-Many! Junction Table time!
 
 ## Video Wireframe
 
-[video ![Home Wireframe](/wireframes/home-wireframe.png)](https://vimeo.com/343530927)
+[x] [video ![Home Wireframe](/wireframes/home-wireframe.png)](https://vimeo.com/343530927)
 
 ## Feature List
 
-> NOTE: Start by taking inventory of the existing code. Part of the work for setting up sagas has been done for you.
+[x] > NOTE: Start by taking inventory of the existing code. Part of the work for setting up sagas has been done for you.
 
 ### Home / List Page
 
