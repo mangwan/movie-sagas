@@ -19,19 +19,33 @@ const styles = {
 
 class Details extends Component {
 
-  handleClick = () => {
+  handleBackClick = () => {
     this.props.history.push('/');
+  }
+
+  handleEditClick = () => {
+    this.props.history.push('/edit');
   }
 
   render() {
     return (
       <div>
-        <button onClick={this.handleClick}>Back to List</button>
-        <button>Edit</button>
+        <button onClick={this.handleBackClick}>Back to List</button>
+        <button onClick={this.handleEditClick}>Edit</button>
         <Paper style={styles.paper}>
           <Grid container>
             <Grid item xs={12}>{this.props.reduxState.currentMovie.title}</Grid>
             <Grid item xs={12}>{this.props.reduxState.currentMovie.description}</Grid>
+            <Grid item xs={12}>
+              <h2>Genre</h2>
+              <ul>
+                {this.props.reduxState.genres.map((genre) => {
+                  return (
+                    <li>{genre.name}</li>
+                  )
+                })}
+              </ul>
+            </Grid>
           </Grid>
         </Paper>
       </div>

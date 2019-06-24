@@ -25,6 +25,7 @@ class Movie extends Component {
     handleClick = () => {
         console.log('movie poster was clicked');
         this.props.dispatch({ type: 'SET_CURRENT_MOVIE', payload: this.props.movie })
+        this.props.dispatch({ type: 'FETCH_GENRES', movie_id: this.props.movie.id })
         this.props.history.push(`/details`);
     }
 

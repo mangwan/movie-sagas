@@ -12,10 +12,15 @@ class App extends Component {
   // Renders the entire app on the DOM
   componentDidMount() {
     this.getMovies();
+    this.getGenres();
   }
 
   getMovies() {
     this.props.dispatch({ type: 'FETCH_MOVIES' })
+  }
+
+  getGenres() {
+    this.props.dispatch({ type: 'FETCH_GENRES' })
   }
   
   render() {
