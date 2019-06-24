@@ -7,6 +7,7 @@ import Home from '../Home/Home';
 import Details from '../Details/Details';
 import Header from '../Header/Header';
 import Movies from '../Movies/Movies';
+import Edit from '../Edit/Edit';
 
 class App extends Component {
   // Renders the entire app on the DOM
@@ -31,6 +32,7 @@ class App extends Component {
           <Route path="/" exact component={Home} />
           <Route path="/" exact component={Movies} />
           <Route path="/details" exact component={Details} />
+          <Route path="/edit" exact component={Edit} />
         </div>
       </Router>
     );

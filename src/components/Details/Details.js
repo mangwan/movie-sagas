@@ -18,11 +18,12 @@ const styles = {
 }
 
 class Details extends Component {
-
+//takes user back to home page
   handleBackClick = () => {
     this.props.history.push('/');
   }
 
+  //takes user to the edit page
   handleEditClick = () => {
     this.props.history.push('/edit');
   }

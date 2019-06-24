@@ -12,12 +12,26 @@ import createSagaMiddleware from 'redux-saga';
 import axios from 'axios';
 import { takeEvery, put } from 'redux-saga/effects'; 
 
-// Create the rootSaga generator function
+//Create the rootSaga generator function
 function* rootSaga() {
     yield takeEvery('FETCH_MOVIES', fetchMovies);
     yield takeEvery('FETCH_GENRES', fetchMovieGenres);
+    yield takeEvery('UPDATE_CURRENT_MOVIE', updateCurrentMovie);
+
 }
 
+//update database with changes in movie title and description
+function* updateCurrentMovie(action) {
+    try {
+        const moviesResponse = yield axios.put('/api/movies', action.payload);
+        console.log('movie response', moviesResponse);
+        yield put({type: 'SET_MOVIES', payload: moviesResponse.data});
+    } catch(error) {
+        console.log('error fetching movies', error);
+    }
+}
+
+//grab list of movies from database
 function* fetchMovies(action) {
     try {
         const moviesResponse = yield axios.get('/api/movies');
@@ -28,6 +42,7 @@ function* fetchMovies(action) {
     }
 }
 
+//grab movie genres from the databse
 function* fetchMovieGenres(action) {
     try {
         const genresResponse = yield axios.get(`/api/movie_genres/${action.movie_id}`);

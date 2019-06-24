@@ -39,5 +39,7 @@ router.get('/movie_genres/:movie_id', (req, res) => {
       });
   });
 
+  //put route to update movie title and description
+  
 
 module.exports = router;
