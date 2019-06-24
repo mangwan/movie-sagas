@@ -40,6 +40,17 @@ router.get('/movie_genres/:movie_id', (req, res) => {
   });
 
   //put route to update movie title and description
-  
+  router.put('/', (req, res) => {
+    cpool.query(`UPDATE "movies"
+    SET "title"=$1,
+    "description"=$2
+    WHERE "id"=$3;`,
+    [req.body.title, req.body.description, req.params.id])
+    .then(result => res.send(result.rows[0]))
+    .catch(error => {
+        console.log('error in SELECT query', error);
+        res.sendStatus(500);
+    });
+});
 
 module.exports = router;
