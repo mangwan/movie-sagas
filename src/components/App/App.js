@@ -10,6 +10,14 @@ import Movies from '../Movies/Movies';
 
 class App extends Component {
   // Renders the entire app on the DOM
+  componentDidMount() {
+    this.getMovies();
+  }
+
+  getMovies() {
+    this.props.dispatch({ type: 'FETCH_MOVIES' })
+  }
+  
   render() {
     return (
       <Router>

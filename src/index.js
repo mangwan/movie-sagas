@@ -14,7 +14,7 @@ import { takeEvery, put } from 'redux-saga/effects';
 
 // Create the rootSaga generator function
 function* rootSaga() {
-    yield takeEvery('FETCH_MOVIES', fetchMovies)
+    yield takeEvery('FETCH_MOVIES', fetchMovies);
 
 }
 
@@ -28,6 +28,7 @@ function* fetchMovies(action) {
     }
 }
 
+
 // Create sagaMiddleware
 const sagaMiddleware = createSagaMiddleware();
 
@@ -35,6 +36,16 @@ const sagaMiddleware = createSagaMiddleware();
 const movies = (state = [], action) => {
     switch (action.type) {
         case 'SET_MOVIES':
+            return action.payload;
+        default:
+            return state;
+    }
+}
+
+// Used to store a movie returned from the server
+const currentMovie = (state = {}, action) => {
+    switch (action.type) {
+        case 'SET_CURRENT_MOVIE':
             return action.payload;
         default:
             return state;
@@ -56,6 +67,7 @@ const storeInstance = createStore(
     combineReducers({
         movies,
         genres,
+        currentMovie,
     }),
     // Add sagaMiddleware to our store
     applyMiddleware(sagaMiddleware, logger),

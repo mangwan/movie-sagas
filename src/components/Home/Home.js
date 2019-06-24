@@ -3,14 +3,6 @@ import { connect } from 'react-redux';
 
 
 class Home extends Component {
-  componentDidMount() {
-    this.getMovies();
-  }
-
-  getMovies() {
-    this.props.dispatch({ type: 'FETCH_MOVIES' })
-  }
-
   render() {
     return (
       <div>
