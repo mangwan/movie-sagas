@@ -15,18 +15,7 @@ class Home extends Component {
     return (
       <div>
         <h1>Home</h1>
-        <pre>{JSON.stringify(this.props.reduxState.movies)}</pre>
-        <div>
-          {this.props.reduxState.movies.map((movie) => {
-            return (
-              <div key={movie.id} movie={movie}>
-              <img src={movie.poster} alt="movie poster"/>
-              {movie.title}
-              {movie.description}
-              </div>
-            );
-          })}
-        </div>
+        {/* <pre>{JSON.stringify(this.props.reduxState.movies)}</pre> */}
       </div>
     )
   }
