@@ -19,6 +19,11 @@ const styles = {
 
 class Movies extends Component {
 
+    handleClick = () => {
+        console.log('movie poster was clicked');
+        this.props.history.push('/details');
+    }
+
     render() {
         return (
             <div>
@@ -28,7 +33,7 @@ class Movies extends Component {
                             <Paper style={styles.paper}>
                             <Grid container spacing={3}>  
                             <Grid item xs={12}>{movie.title}</Grid>            
-                            <Grid item xs={3}><img src={movie.poster} alt="movie poster" /></Grid>
+                            <Grid item xs={3}><img src={movie.poster} alt="movie poster" onClick={this.handleClick}/></Grid>
                             <Grid item xs={9}>{movie.description}</Grid>
                             </Grid> 
                             </Paper>
