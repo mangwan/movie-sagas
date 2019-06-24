@@ -19,10 +19,14 @@ const styles = {
 
 class Details extends Component {
 
+  handleClick = () => {
+    this.props.history.push('/');
+  }
+
   render() {
     return (
       <div>
-        <button>Back to List</button>
+        <button onClick={this.handleClick}>Back to List</button>
         <button>Edit</button>
         <Paper style={styles.paper}>
           <Grid container>
