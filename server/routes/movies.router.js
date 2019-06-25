@@ -48,7 +48,7 @@ router.get('/movie_genres/:movie_id', (req, res) => {
     [req.body.title, req.body.description, req.params.id])
     .then(result => res.send(result.rows[0]))
     .catch(error => {
-        console.log('error in SELECT query', error);
+        console.log('error in SELECT movies query', error);
         res.sendStatus(500);
     });
 });
