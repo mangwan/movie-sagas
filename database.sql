@@ -42,3 +42,13 @@ VALUES
 ('Science Fiction'),
 ('Space-Opera'),
 ('Superhero');
+
+CREATE TABLE "movie_genres" (
+  "id" SERIAL PRIMARY KEY,
+  "movies_id" INT REFERENCES "movies" NOT NULL, 
+  "genres_id" INT REFERENCES "genres" NOT NULL
+);
+
+INSERT INTO "public"."movie_genres"("id", "movies_id", "genres_id") VALUES(1, 1, 1) RETURNING "id", "movies_id", "genres_id";
+INSERT INTO "public"."movie_genres"("id", "movies_id", "genres_id") VALUES(2, 1, 11) RETURNING "id", "movies_id", "genres_id";
+INSERT INTO "public"."movie_genres"("id", "movies_id", "genres_id") VALUES(3, 1, 5) RETURNING "id", "movies_id", "genres_id";
